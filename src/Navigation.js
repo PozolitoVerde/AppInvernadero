@@ -6,11 +6,11 @@ import Main from "./components/main";
 
 const Drawer = createDrawerNavigator();
 
-export default function App() {
+export default function MyDrawer() {
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Home" component={Main} />
         <Drawer.Screen name="Notifications" component={NotificationsScreen} />
       </Drawer.Navigator>
     </NavigationContainer>

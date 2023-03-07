@@ -1,8 +1,10 @@
 import React from "react";
-import Main from "./src/components/main";
+import MyDrawer from "./src/Navigation";
 
 export default function App() {
-  return <Main />
+  return (
+    <MyDrawer />
+  );
 }
 
 
