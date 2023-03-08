@@ -37,7 +37,7 @@ function MyTabs (){
          
           />
           <Tab.Screen
-         name="Registro" 
+         name="  " 
          component={Registro}
          options= {{
           tabBarLabel: 'Registro',

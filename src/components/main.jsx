@@ -16,11 +16,13 @@ const Main = () => {
                 <TextInput
                     style={styles.Ipt}                
                     placeholder='Ingresa tu correo'
+                    placeholderTextColor="grey" 
                 />
                 <Text style={styles.p}>Password</Text>
                 <TextInput
                     style={styles.Ipt}
                     placeholder='Ingresa tu contraseña'
+                    placeholderTextColor="grey" 
                     secureTextEntry={true}
                     />
             </View>
@@ -84,7 +86,8 @@ const styles = StyleSheet.create({
         color: 'green',
         alignSelf: 'baseline',
         marginTop: 30,
-        marginBottom: 5
+        marginBottom: 5,
+        fontWeight: 700
     },
     registrate: {
         color: 'green',
