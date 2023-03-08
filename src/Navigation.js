@@ -8,6 +8,8 @@ import { View } from 'react-native';
 
 //Screens
 import Main from './components/main';
+import Medicion from './components/Medidores';
+import Registro from './components/Registro';
 
 
 
@@ -23,10 +25,34 @@ function MyTabs (){
         
       >
         <Tab.Screen
-         name="Home" 
+         name=" " 
          component={Main}
          options= {{
           tabBarLabel: 'Inicio',
+          tabBarIcon: ({ color, size}) => (
+            <Ionicons name="home" size={size} color={color} />
+          ),
+          
+         }}
+         
+          />
+          <Tab.Screen
+         name="Registro" 
+         component={Registro}
+         options= {{
+          tabBarLabel: 'Registro',
+          tabBarIcon: ({ color, size}) => (
+            <Ionicons name="home" size={size} color={color} />
+          ),
+          
+         }}
+         
+          />
+          <Tab.Screen
+         name="Medidores" 
+         component={Medicion}
+         options= {{
+          tabBarLabel: 'Medidores',
           tabBarIcon: ({ color, size}) => (
             <Ionicons name="home" size={size} color={color} />
           ),

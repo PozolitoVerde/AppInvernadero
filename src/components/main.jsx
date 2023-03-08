@@ -10,7 +10,7 @@ const Main = () => {
             />
             <Text style={styles.h1}>Iniciar Sesión</Text>
             
-            <Text style={styles.h2}>Por favor, ingrese sus datos para acceder</Text>
+            {/* <Text style={styles.h2}>Por favor, ingrese sus datos para acceder</Text> */}
             <View style={styles.containerIn}>
                 <Text style={styles.p}>Email</Text>
                 <TextInput
