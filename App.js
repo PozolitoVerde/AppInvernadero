@@ -1,9 +1,12 @@
 import React from "react";
-import MyDrawer from "./src/Navigation";
+import Navigation from "./src/Navigation";
+
 
 export default function App() {
   return (
-    <MyDrawer />
+    
+    <Navigation />
+    
   );
 }
 

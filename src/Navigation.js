@@ -1,18 +1,54 @@
-import React from "react";
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
+import { StyleSheet } from 'react-native-web';
+import { View } from 'react-native';
 
-import Main from "./components/main";
 
-const Drawer = createDrawerNavigator();
+//Screens
+import Main from './components/main';
 
-export default function MyDrawer() {
-  return (
-    <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={Main} />
-        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-      </Drawer.Navigator>
-    </NavigationContainer>
+
+
+const Tab = createBottomTabNavigator();
+
+function MyTabs (){
+  return(
+      <Tab.Navigator
+        screenOptions={{
+          tabBarActiveTintColor: 'green',
+          
+        }}
+        
+      >
+        <Tab.Screen
+         name="Home" 
+         component={Main}
+         options= {{
+          tabBarLabel: 'Inicio',
+          tabBarIcon: ({ color, size}) => (
+            <Ionicons name="home" size={size} color={color} />
+          ),
+          
+         }}
+         
+          />
+        
+      </Tab.Navigator>
   );
 }
+
+export default function Navigation() {
+  return (
+  
+    <NavigationContainer >
+      
+      <MyTabs/>
+      
+    </NavigationContainer>
+    
+  );
+}
+
+

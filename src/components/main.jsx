@@ -1,5 +1,4 @@
 import React from 'react';
-import Contants from 'expo-constants'
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 
 const Main = () => {
@@ -22,7 +21,8 @@ const Main = () => {
                 <TextInput
                     style={styles.Ipt}
                     placeholder='Ingresa tu contraseña'
-                />
+                    secureTextEntry={true}
+                    />
             </View>
             <TouchableOpacity
                 style={styles.Btn}
@@ -57,7 +57,8 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'white',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        textAlign: 'center'
     }, 
     containerIn:{
         width: '80%',
@@ -94,7 +95,8 @@ const styles = StyleSheet.create({
     Ipt:{
         padding: 10,
         width: '100%',
-        paddingStart: 0
+        paddingStart: 0,
+        
     },
     Btn:{
         width: '80%',
