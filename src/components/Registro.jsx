@@ -1,94 +1,100 @@
-import React from "react";
-import { useState } from "react";
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, CheckBox } from "react-native-web";
+import React, { useState } from "react";
+import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native";
+import Checkbox from "expo-checkbox";
 
 
 
-const Registro = () =>{
-    const [isSelected, setSelection] = useState(false);
+
+
+const Registro = () => {
+
+    const [isChecked, setChecked] = useState(false);
+
     return(
-        <View style={styles.container}>
+        <View style={styles.Container}>
             <Text style={styles.h1}>Registro</Text>
-            <View style={styles.containerIn}>
-            <Text
-                style={styles.p}
-            >
-                Correo electrónico
-            </Text>
-            <TextInput
-                style={styles.Ipt}
-                placeholder='Ingresa tu correo'
-                placeholderTextColor="grey" 
-            />
+             <View style={styles.containerIn}>
              <Text
-                style={styles.p}
-            >
-                Nombre(s)
-            </Text>
-            <TextInput
-                style={styles.Ipt}
-                placeholder='Ingresa tu nombre'
-                placeholderTextColor="grey" 
-            />
-             <Text
-                style={styles.p}
+                 style={styles.p}
+             >
+                 Correo electrónico
+             </Text>
+             <TextInput
+                 style={styles.Ipt}
+                 placeholder='Ingresa tu correo'
+                 placeholderTextColor="grey" 
+             />
+              <Text
+                 style={styles.p}
+             >
+                 Nombres
+             </Text>
+             <TextInput
+                 style={styles.Ipt}
+                 placeholder='Ingresa tu nombre'
+                 placeholderTextColor="grey" 
+             />
+              <Text
+                 style={styles.p}
                 
-            >
-                Apellidos
-            </Text>
-            <TextInput
-                style={styles.Ipt}
-                placeholder='Ingresa tus apellidos'
-                placeholderTextColor="grey" 
-            />
-             <Text
-                style={styles.p}
-            >
-                Contraseña
-            </Text>
-            <TextInput
-                style={styles.Ipt}
-                placeholder='Ingresa tu contraseña'
-                placeholderTextColor="grey" 
-                secureTextEntry={true}
-            />
-             <Text
-                style={styles.p}
-            >
-                Fecha de nacimiento
-            </Text>
-            <TextInput
-                style={styles.Ipt}
-                placeholder='Ingresa tu fecha de nacimiento'
-                placeholderTextColor="grey" 
-            />
-            </View>
-            <View style={styles.checkboxContainer}>
-            <Text style = {styles.p2}>
-            <CheckBox
-                value={isSelected}
-                onValueChange={setSelection}
-                style={styles.checkbox}
-                tintColors={{ true: 'green', false: 'white' }}
-            />
-                Estoy de acuerdo con los <TouchableOpacity style={styles.ter}>Términos de servicio.</TouchableOpacity>
-            </Text>
+             >
+                 Apellidos
+             </Text>
+             <TextInput
+                 style={styles.Ipt}
+                 placeholder='Ingresa tus apellidos'
+                 placeholderTextColor="grey" 
+             />
+              <Text
+                 style={styles.p}
+             >
+                 Contraseña
+             </Text>
+             <TextInput
+                 style={styles.Ipt}
+                 placeholder='Ingresa tu contraseña'
+                 placeholderTextColor="grey" 
+                 secureTextEntry={true}
+             />
+              <Text
+                 style={styles.p}
+             >
+                 Fecha de nacimiento
+             </Text>
+             <TextInput
+                 style={styles.Ipt}
+                 placeholder='Ingresa tu fecha de nacimiento'
+                 placeholderTextColor="grey" 
+             />
+             </View>
+             <View style={styles.checkboxContainer}>
+                <Checkbox style={styles.checkbox} value={isChecked} color="green" onValueChange={setChecked}/>
+                <Text style = {styles.p2}>Estoy de acuerdo con los </Text>
+                <TouchableOpacity style={styles.terbtn}>
+                 <Text style={styles.ter}>Términos de servicio.</Text>
+                </TouchableOpacity></View>
             
-            </View>
-            <TouchableOpacity
-                style={styles.Btn}
-            >
-                <Text style={styles.Btntxt}>Registrarse</Text>
-            </TouchableOpacity>
-            <Text>Ya tienes una cuenta? <TouchableOpacity style={styles.ini}>Iniciar sesión</TouchableOpacity></Text>
-        </View>
+                <TouchableOpacity
+                 style={styles.Btn}
+             >
+                 <Text style={styles.Btntxt}>Registrarse</Text>
+             </TouchableOpacity>
+             
+             <View style={styles.checkboxContainer}>
+                 <Text>Ya tienes una cuenta? </Text>
+                 <TouchableOpacity>
+                     <Text style={styles.ini}>Iniciar sesión</Text>
+                 </TouchableOpacity>
+             </View>
+             </View>
+        
     );
 }
 
-export default Registro;
+export default Registro
 
 const styles = StyleSheet.create({
-    container: {
+    Container: {
         flex: 1,
         backgroundColor: 'white',
         alignItems: 'center',
@@ -98,7 +104,7 @@ const styles = StyleSheet.create({
     h1: {
         fontSize: 30,
         fontWeight: 'bold',
-        margin: 10
+       
     },
     Ipt:{
         padding: 10,
@@ -113,8 +119,8 @@ const styles = StyleSheet.create({
     p:{
         color: 'green',
         alignSelf: 'baseline',
-        marginTop: 30,
-        marginBottom: 10,
+        marginTop: 25,
+        marginBottom: 5,
         fontWeight: 700
     },
     checkbox: {
@@ -125,7 +131,7 @@ const styles = StyleSheet.create({
         margin: 10
     },
     p2: {
-        margin: 8
+        marginLeft: 5
     },
     Btn:{
         width: '80%',
@@ -133,16 +139,22 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 15,
         borderRadius: 5,
-        marginBottom: 20
+        margin: 5
+        
     },
     Btntxt:{
         fontWeight: 'bold',
         color: 'white',
-        fontSize: 18
+        fontSize: 18,
+        
 
     },
     ter:{
-        color: 'green'
+        color: 'green',
+        paddingStart: 0
+    },
+    terbtn:{
+        alignSelf: 'center'
     },
     ini:{
         color: 'green',

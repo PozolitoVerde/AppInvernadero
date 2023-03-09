@@ -2,12 +2,12 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
-import { StyleSheet } from 'react-native-web';
-import { View } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons'; 
+
 
 
 //Screens
-import Main from './components/main';
+import Main from './components/Main';
 import Medicion from './components/Medidores';
 import Registro from './components/Registro';
 
@@ -54,7 +54,7 @@ function MyTabs (){
          options= {{
           tabBarLabel: 'Medidores',
           tabBarIcon: ({ color, size}) => (
-            <Ionicons name="home" size={size} color={color} />
+            <FontAwesome name="tachometer" size={size} color={color} />
           ),
           
          }}
