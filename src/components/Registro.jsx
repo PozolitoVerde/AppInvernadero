@@ -7,7 +7,7 @@ import Checkbox from "expo-checkbox";
 
 
 const Registro = () => {
-
+    //funcionamiento checkbox
     const [isChecked, setChecked] = useState(false);
 
     return(
@@ -68,7 +68,7 @@ const Registro = () => {
              />
              </View>
              <View style={styles.checkboxContainer}>
-                <Checkbox style={styles.checkbox} value={isChecked} color="green" onValueChange={setChecked}/>
+                <Checkbox style={styles.checkbox} value={isChecked} color="green" onValueChange={setChecked} />
                 <Text style = {styles.p2}>Estoy de acuerdo con los </Text>
                 <TouchableOpacity style={styles.terbtn}>
                  <Text style={styles.ter}>Términos de servicio.</Text>
