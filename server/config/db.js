@@ -1,26 +1,20 @@
 const mongoose = require('mongoose');
 
-const URI = 'mongodb://localhost:27017/testInv';
+// URL de conexión a la base de datos
+const url = 'mongodb://localhost:27017/testInv';
 
-module.exports = () => {
-    const connect = () => {
-        mongoose.connect(
-            URI,
-            {
-                keepAlive: true,
-                useNewUrlParser: true,
-                useUnifiedTopology: true
-            },
-            (err) => {
-                if (err) {
-                    console.log('DB:ERROR');
-                }else{
-                    console.log('DB:CONNECT');
-                }
-            }
-        )
+// Opciones de conexión
+const options = {
+    keepAlive: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+};
+
+// Conectar a la base de datos
+module.exports = () =>{
+        mongoose.connect(url, options)
+        .then(() => console.log('Conexión exitosa a MongoDB'))
+        .catch(err => console.log('Error al conectar a MongoDB:', err));
     }
 
-    connect();
-}
-    
+ 
