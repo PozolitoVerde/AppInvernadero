@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 import Checkbox from "expo-checkbox";
+import { Formik, useField } from "formik";
+import { SignValidationSchena } from '../validation/Sign';
+import StyleInput from '../Styles/StyleInput';
 
 
 
@@ -10,7 +13,37 @@ const Registro = () => {
     //funcionamiento checkbox
     const [isChecked, setChecked] = useState(false);
 
+    const initialValues = {
+        email: '',
+        nombres: '',
+        apellidos: '',
+        password: '',
+        birthDate: ''
+
+    }
+    //estilos etiqueta FormikInputValue
+    const FormikInputValue = ({ name, ...props}) => {
+        const [field, meta, helpers] = useField(name)
+
+        return(
+            <>
+            <StyleInput
+                // error={meta.error}
+                value={field.value}
+                onChangeText={value => helpers.setValue(value)}
+                {...props}
+            /> 
+                {meta.error && <Text style={styles.error}>
+                    {meta.error}
+                </Text>}
+            </>
+        )
+     }
+
     return(
+        <Formik validationSchema={SignValidationSchena}  initialValues={initialValues} onSubmit={values => console.log(values)}>
+            {({ handleSubmit }) => {
+                return(
         <View style={styles.Container}>
             <Text style={styles.h1}>Registro</Text>
              <View style={styles.containerIn}>
@@ -19,8 +52,9 @@ const Registro = () => {
              >
                  Correo electrónico
              </Text>
-             <TextInput
-                 style={styles.Ipt}
+             <FormikInputValue
+                 name = 'email'
+                 
                  placeholder='Ingresa tu correo'
                  placeholderTextColor="grey" 
              />
@@ -29,8 +63,9 @@ const Registro = () => {
              >
                  Nombres
              </Text>
-             <TextInput
-                 style={styles.Ipt}
+             <FormikInputValue
+                 name = 'nombres'
+                 
                  placeholder='Ingresa tu nombre'
                  placeholderTextColor="grey" 
              />
@@ -40,8 +75,9 @@ const Registro = () => {
              >
                  Apellidos
              </Text>
-             <TextInput
-                 style={styles.Ipt}
+             <FormikInputValue
+                 name = 'apellidos'
+                 
                  placeholder='Ingresa tus apellidos'
                  placeholderTextColor="grey" 
              />
@@ -50,8 +86,9 @@ const Registro = () => {
              >
                  Contraseña
              </Text>
-             <TextInput
-                 style={styles.Ipt}
+             <FormikInputValue
+                 name = 'password'
+                 
                  placeholder='Ingresa tu contraseña'
                  placeholderTextColor="grey" 
                  secureTextEntry={true}
@@ -61,8 +98,8 @@ const Registro = () => {
              >
                  Fecha de nacimiento
              </Text>
-             <TextInput
-                 style={styles.Ipt}
+             <FormikInputValue
+                 name = 'birthDate'
                  placeholder='Ingresa tu fecha de nacimiento'
                  placeholderTextColor="grey" 
              />
@@ -76,6 +113,7 @@ const Registro = () => {
             
                 <TouchableOpacity
                  style={styles.Btn}
+                 onPress={handleSubmit}
              >
                  <Text style={styles.Btntxt}>Registrarse</Text>
              </TouchableOpacity>
@@ -87,6 +125,9 @@ const Registro = () => {
                  </TouchableOpacity>
              </View>
              </View>
+                )
+            }}
+        </Formik>
         
     );
 }
@@ -159,5 +200,11 @@ const styles = StyleSheet.create({
     ini:{
         color: 'green',
         fontWeight: 700
+    },
+    error:{
+        color: 'red',
+        fontSize: 10,
+        marginBottom: 5,
+        marginTop: 0
     }
 })
