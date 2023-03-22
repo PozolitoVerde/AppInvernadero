@@ -4,7 +4,7 @@ import { Formik, useField } from 'formik';
 import { loginValidationSchena } from '../validation/Login';
 import StyleInput from '../Styles/StyleInput';
 
-const Main = () => {
+const Main = ({ navigation }) => {
     const initialValues = {
         email: '',
         password: ''
@@ -74,7 +74,11 @@ const Main = () => {
                                     >
                                         Olvidaste tu contraseña?
                                     </Text>
-                                    <TouchableOpacity>
+                                    <TouchableOpacity
+                                        onPress={() => {
+                                            navigation.navigate('Registro')
+                                        }}
+                                    >
                                         <Text
                                             style={styles.registrate}
                                         >

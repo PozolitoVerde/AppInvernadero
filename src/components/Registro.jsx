@@ -9,7 +9,7 @@ import StyleInput from '../Styles/StyleInput';
 
 
 
-const Registro = () => {
+const Registro = ({ navigation }) => {
     //funcionamiento checkbox
     const [isChecked, setChecked] = useState(false);
 
@@ -120,7 +120,11 @@ const Registro = () => {
              
              <View style={styles.checkboxContainer}>
                  <Text>Ya tienes una cuenta? </Text>
-                 <TouchableOpacity>
+                 <TouchableOpacity
+                    onPress={ () => {
+                        navigation.navigate('Home')
+                    } }
+                 >
                      <Text style={styles.ini}>Iniciar sesión</Text>
                  </TouchableOpacity>
              </View>

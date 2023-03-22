@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import  {FlatList, View, Text, TouchableOpacity} from 'react-native';
+import Navigation from '../Navigation';
 // import {styles} from '../theme/Theme';
 
  function Medicion() {
@@ -32,10 +33,11 @@ import  {FlatList, View, Text, TouchableOpacity} from 'react-native';
         </View>
       
         
-        
+       
+    </View>
+    <Navigation/> 
     </View>
     
-    </View>
   );
 }
 

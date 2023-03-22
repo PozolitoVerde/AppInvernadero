@@ -7,9 +7,9 @@ import { FontAwesome } from '@expo/vector-icons';
 
 
 //Screens
-import Main from './components/Main';
+// import Main from './components/Main';
 import Medicion from './components/Medidores';
-import Registro from './components/Registro';
+// import Registro from './components/Registro';
 
 
 
@@ -24,7 +24,7 @@ function MyTabs (){
         }}
         
       >
-        <Tab.Screen
+        {/* <Tab.Screen
          name=" " 
          component={Main}
          options= {{
@@ -47,7 +47,7 @@ function MyTabs (){
           
          }}
          
-          />
+          /> */}
           <Tab.Screen
          name="Medidores" 
          component={Medicion}
