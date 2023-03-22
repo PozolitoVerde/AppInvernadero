@@ -62,6 +62,7 @@ const Main = ({ navigation }) => {
                                 <TouchableOpacity
                                     style={styles.Btn}
                                     onPress={handleSubmit}
+                                    
                                     >
                                         <Text style={styles.Btntxt}>Entrar</Text>
                                     </TouchableOpacity>
