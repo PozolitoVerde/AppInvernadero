@@ -3,7 +3,7 @@ import Main from "./src/components/Main";
 import Registro from "./src/components/Registro";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
-import Medicion from "./src/components/Medidores";
+import Appuser from "./src/components/appUser";
 // import Navigation from "./src/Navigation";
 
 const Stack = createNativeStackNavigator();
@@ -27,8 +27,8 @@ export default function App() {
           />
 
           <Stack.Screen
-            name = 'Medidores'
-            component = { Medicion }
+            name = 'Inicio'
+            component={ Appuser }
           />
           
       </Stack.Navigator>

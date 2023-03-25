@@ -28,9 +28,22 @@ const Main = ({ navigation }) => {
         )
      }
 
+    
+
     return(
-        <Formik validationSchema={loginValidationSchena}  initialValues={initialValues} onSubmit={values => console.log(values)}>
+        <Formik validationSchema={loginValidationSchena}  initialValues={initialValues} onSubmit={
+        
+            values => {
+                fetch(`http://192.168.1.75:5000/inv/users/:email=${values.email}/:password=${values.password}`)
+                    .then( res => {
+                        if (res.ok === true){
+                            navigation.navigate('Inicio')
+                    }})
+                    
+            }
+            }>
             {({ handleSubmit }) => {
+
                 return(
                     <View style={styles.container}>
                                 <Image

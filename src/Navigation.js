@@ -6,9 +6,11 @@ import { FontAwesome } from '@expo/vector-icons';
 
 
 
+
 //Screens
-// import Main from './components/Main';
-import Medicion from './components/Medidores';
+
+import Dia from './components/mediaDia';
+ import Medicion from './components/Medidores';
 // import Registro from './components/Registro';
 
 
@@ -18,39 +20,16 @@ const Tab = createBottomTabNavigator();
 function MyTabs (){
   return(
       <Tab.Navigator
+      initialRouteName='Medidores'
         screenOptions={{
           tabBarActiveTintColor: 'green',
-          
+          headerShown: false
         }}
         
       >
-        {/* <Tab.Screen
-         name=" " 
-         component={Main}
-         options= {{
-          tabBarLabel: 'Inicio',
-          tabBarIcon: ({ color, size}) => (
-            <Ionicons name="home" size={size} color={color} />
-          ),
-          
-         }}
-         
-          />
-          <Tab.Screen
-         name="  " 
-         component={Registro}
-         options= {{
-          tabBarLabel: 'Registro',
-          tabBarIcon: ({ color, size}) => (
-            <Ionicons name="home" size={size} color={color} />
-          ),
-          
-         }}
-         
-          /> */}
-          <Tab.Screen
+        <Tab.Screen
          name="Medidores" 
-         component={Medicion}
+        component={ Medicion }
          options= {{
           tabBarLabel: 'Medidores',
           tabBarIcon: ({ color, size}) => (
@@ -60,6 +39,20 @@ function MyTabs (){
          }}
          
           />
+
+          <Tab.Screen
+         name="Registro" 
+        component={Dia}
+         options= {{
+          tabBarLabel: 'Media Del Dia',
+          tabBarIcon: ({ color, size}) => (
+            <FontAwesome name="book" size={size} color={color} />
+          ),
+          
+         }}
+         />
+
+         
         
       </Tab.Navigator>
   );
@@ -68,11 +61,15 @@ function MyTabs (){
 export default function Navigation() {
   return (
   
-    <NavigationContainer >
-      
+    <NavigationContainer
+    independent={true}
+    >
       <MyTabs/>
-      
     </NavigationContainer>
+      
+      
+      
+    
     
   );
 }

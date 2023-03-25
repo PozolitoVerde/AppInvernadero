@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import  {FlatList, View, Text, TouchableOpacity} from 'react-native';
+import  {FlatList, View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import Navigation from '../Navigation';
 // import {styles} from '../theme/Theme';
 
@@ -22,7 +22,7 @@ import Navigation from '../Navigation';
   
 
   return (
-    <View>
+    <View style={styles.cont}>
     <View >
       
       
@@ -35,13 +35,19 @@ import Navigation from '../Navigation';
         
        
     </View>
-    <Navigation/> 
+    
     </View>
     
   );
 }
 
 
+
 export default Medicion
 
 
+const styles = StyleSheet.create({
+  cont:{
+    flex: 1
+  }
+})
