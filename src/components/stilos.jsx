@@ -1,0 +1,138 @@
+import { StyleSheet } from "react-native";
+
+export const stilos = StyleSheet.create({
+    contenedor: {
+      flex: 1,
+      backgroundColor: "#fff",
+    },
+    medidores: {
+      alignContent: "center",
+      verticalAlign: "center",
+      marginTop: 100,
+      margin: 20,
+    },
+    medidor: {
+      margin: 30,
+      alignItems: "center",
+    },
+    textomedidor: {
+      fontSize: 25,
+      textAlign: "center",
+      marginBottom: 0,
+    },
+    boton: {
+      verticalAlign: 'center',
+      alignSelf: 'center',
+      right: -20,
+      padding: 0,
+    },
+    textomedidor2: {
+      fontSize: 25,
+      textAlign: "center",
+      marginTop: 100,
+      marginBottom: -120,
+    },
+    tittle: {
+      backgroundColor: "green",
+      fontSize: 19,
+      padding: 30,
+      margin: -30,
+      marginEnd: -50,
+      fontFamily: 'serif',
+      marginBottom: -50,
+      paddingTop: 30,
+      color: "#f0f0f0",
+      textAlign: "center",
+    },
+    head:{
+    marginTop: -70,
+    flex: 1,
+
+    },
+    tarjetas: {
+      padding: 5,
+      backgroundColor: "#ABEBC6",
+      borderRadius: 25,
+      marginBottom: 25,
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.5,
+      shadowRadius: 3.84,
+  
+      elevation: 5,
+    },
+    tarjetas2: {
+      padding: 5,
+      backgroundColor: "#F2F3F4",
+      borderRadius: 25,
+      marginBottom: 25,
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.5,
+      shadowRadius: 3.84,
+      elevation: 5,
+    },
+    tarjetasChart: {
+      padding: 20,
+      backgroundColor: "#F2F3F4",
+      borderRadius: 10,
+      marginLeft: -20,
+      marginRight: -20,
+      marginBottom: 25,
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.5,
+      shadowRadius: 3.84,
+      elevation: 5,
+    },
+    fechayhora: {
+      fontSize: 15,
+      fontFamily: 'sans-serif',
+      textAlign: "justify",
+      marginBottom: 50,
+      color: "white",
+      padding: 15,
+      backgroundColor: "green",
+      borderRadius: 25,
+      margin: 100,
+      marginRight: 200,
+      marginLeft: -15,
+      marginTop: 0,
+    },
+    hora: {
+      fontSize: 15,
+      fontFamily: 'sans-serif',
+      textAlign: "justify",
+      marginBottom: 15,
+      color: "white",
+      padding: 15,
+      backgroundColor: "green",
+      borderRadius: 25,
+      marginRight: 200,
+      margin: 100,
+      marginLeft: -15,
+      marginTop: -50,
+    },
+    img: {
+      width: 300,
+      height: 150,
+      alignSelf: 'center',
+      marginBottom: 50,
+    },
+    img3: {
+      width: 50,
+      height: 50,
+      top: -20,
+      alignSelf: 'flex-start',
+    }
+  });
+  

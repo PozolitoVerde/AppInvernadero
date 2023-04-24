@@ -1,9 +1,9 @@
 import React from "react";
-import Main from "./src/components/Main";
 import Registro from "./src/components/Registro";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import Appuser from "./src/components/appUser";
+import Login from "./src/components/Login";
 // import Navigation from "./src/Navigation";
 
 const Stack = createNativeStackNavigator();
@@ -18,7 +18,7 @@ export default function App() {
       >
           <Stack.Screen
             name = 'Home'
-            component = { Main }
+            component = { Login }
           />
 
           <Stack.Screen

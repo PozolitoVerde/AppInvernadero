@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, StatusBar } from 'react-native';
 import { Formik, useField } from 'formik';
 import { loginValidationSchena } from '../validation/Login';
 import StyleInput from '../Styles/StyleInput';
 
-const Main = ({ navigation }) => {
+const Login = ({ navigation }) => {
     const initialValues = {
         email: '',
         password: ''
@@ -34,7 +34,7 @@ const Main = ({ navigation }) => {
         <Formik validationSchema={loginValidationSchena}  initialValues={initialValues} onSubmit={
         
             values => {
-                fetch(`http://192.168.1.75:5000/inv/users/:email=${values.email}/:password=${values.password}`)
+                fetch(`https://app-invernadero-back.vercel.app/inv/users/:email=${values.email}/:password=${values.password}`)
                     .then( res => {
                         if (res.ok === true){
                             navigation.navigate('Inicio')
@@ -46,6 +46,7 @@ const Main = ({ navigation }) => {
 
                 return(
                     <View style={styles.container}>
+                            <StatusBar backgroundColor="#279A00" barStyle="light-content" />
                                 <Image
                                 source={require("../../img/cultivecare.png")}
                                 style={styles.img}
@@ -99,6 +100,18 @@ const Main = ({ navigation }) => {
                                             Registrarse
                                         </Text>
                                     </TouchableOpacity>
+
+                                    <TouchableOpacity
+                                        onPress={() => {
+                                            navigation.navigate('Inicio')
+                                        }}
+                                        style={{fontSize: 15, left: -80, marginRight: 25, bottom: -70}}
+                                    >
+                                        <Text
+                                        >
+                                            DIRECTO
+                                        </Text>
+                                    </TouchableOpacity>
                                 </View>
                             </View>
                 );
@@ -108,13 +121,13 @@ const Main = ({ navigation }) => {
     );
 }
 
-export default Main;
+export default Login;
 
 const styles = StyleSheet.create({
     error:{
         color: 'red',
         fontSize: 10,
-        marginBottom: 5,
+        marginBottom: 2,
         marginTop: 0
     },
     container: {
@@ -155,7 +168,7 @@ const styles = StyleSheet.create({
         color: 'green',
         fontSize: 17,
         fontWeight: '600',
-        paddingLeft: 40
+        paddingLeft: 40,
     },
     // Ipt:{
     //     padding: 10,
@@ -178,9 +191,10 @@ const styles = StyleSheet.create({
 
     },
     img:{
-        width: 256,
-        height: 160,
-        marginBottom: 30
+        width: 200,
+        height: 120,
+        marginBottom: 30,
+        marginTop: -200
     }
 
     

@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { AntDesign } from '@expo/vector-icons'; 
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
 
@@ -11,6 +12,7 @@ import { FontAwesome } from '@expo/vector-icons';
 
 import Dia from './components/mediaDia';
  import Medicion from './components/Medidores';
+ import Login from './components/Login';
 // import Registro from './components/Registro';
 
 
@@ -41,20 +43,31 @@ function MyTabs (){
           />
 
           <Tab.Screen
-         name="Registro" 
+         name="Media" 
         component={Dia}
          options= {{
           tabBarLabel: 'Media Del Dia',
           tabBarIcon: ({ color, size}) => (
-            <FontAwesome name="book" size={size} color={color} />
-          ),
+          <AntDesign name="linechart" size={24} color={color} />            ),
           
          }}
          />
-
+         <Tab.Screen
+         name="Salida" 
+        component={Login}
+         options= {{
+          tabBarLabel: 'Media Del Dia',
+          tabBarIcon: ({ color, size}) => (
+          <Ionicons name="exit" size={24} color={color} />          ),
+          
+         }}
+         />
+        
+         
          
         
       </Tab.Navigator>
+      
   );
 }
 
